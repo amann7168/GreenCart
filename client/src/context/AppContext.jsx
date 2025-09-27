@@ -9,8 +9,10 @@ export const AppContextProvider = ({ children }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [isSeller, setIsSeller] = useState(false);
+  const [showUserLogin, setShowuserLogin] = useState(false);
 
-  const value = { navigate, user, setUser, isSeller, setIsSeller };
+
+  const value = { navigate, user, setUser, setIsSeller,isSeller ,showUserLogin,setShowuserLogin};
 
   return (
     <AppContext.Provider value={value}>
@@ -19,7 +21,7 @@ export const AppContextProvider = ({ children }) => {
   );
 };
 
-// // Custom hook to use context
-// export const useAppContext = () => {
-//   return useContext(AppContext);
-// };
+// Custom hook to use context
+export const useAppContext = () => {
+  return useContext(AppContext);
+};
