@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import {Toaster} from 'react-hot-toast'
+import Footer from './components/Footer'
 
 
 export const App = () => {
@@ -18,10 +19,10 @@ export const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
         </Routes>
-        
-      </div>
-    </div>
-  );
+       </div>
+        {!isSellerPath && <Footer/>}
+     </div>
+  )
 }
 
 export default App;
