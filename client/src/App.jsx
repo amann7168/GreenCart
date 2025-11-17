@@ -4,14 +4,19 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import {Toaster} from 'react-hot-toast'
 import Footer from './components/Footer'
+import { useAppContext } from './context/Appcontext'
+import Login from './components/Login'
 
 
 export const App = () => {
   const isSellerPath = useLocation().pathname.includes("seller");
 
+  const {showUserLogin}=useAppContext()
   return (
     <div>
       {isSellerPath ? null : <Navbar/>}
+
+      {showUserLogin ? <Login/> : null}
 
       <Toaster/>
 
